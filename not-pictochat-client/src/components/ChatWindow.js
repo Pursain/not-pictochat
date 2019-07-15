@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Container, Row, Button, Col, InputGroup, Form } from "react-bootstrap";
 import Message from "./Message";
 import uuid from "uuid";
+import io from "socket.io-client";
 
 export class ChatWindow extends Component {
-  componentDidMount() {
-    this.addMsg("test", "lorem ipsum");
-  }
+  socket = io("http://localhost:4000");
+  id = uuid.v4();
 
   addMsg = (sender, message) => {
     const newMsg = {
@@ -16,6 +16,15 @@ export class ChatWindow extends Component {
     };
     this.setState({ msgs: [...this.state.msgs, newMsg] });
   };
+
+  componentDidMount() {
+    this.socket.on(
+      "message",
+      function(data) {
+        this.addMsg(data.sender, data.msg);
+      }.bind(this)
+    );
+  }
 
   containerStyle = {
     padding: "20px",
@@ -41,7 +50,9 @@ export class ChatWindow extends Component {
     console.log(data);
 
     // send message over socket
-    this.addMsg("me", data);
+    this.addMsg(this.id, data);
+
+    this.socket.emit("message", { sender: this.id, msg: data });
   };
 
   displayMessages = () => {
