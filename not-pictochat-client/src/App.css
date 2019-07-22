@@ -2,5 +2,61 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #FFCC00;
+    background-color: rgba(242, 245, 234, 1             ) 
 }
+
+.dark-primary-color    { background: rgba(44, 54, 63, 1); }
+.default-primary-color { background: rgba(225, 187, 128, 1); }
+.light-primary-color   { background: rgba(242, 245, 234, 1); }
+.light-secondary-color   { background: rgba(214, 219, 210, 1); }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: rgba(231, 90, 124, 1); }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
+
+.accent-button { 
+    color: #ffffff; 
+    background-color: #E75A7B; 
+    border-color: #E75A7B; 
+  } 
+  .accent-button:hover, 
+  .accent-button:focus, 
+  .accent-button:active, 
+  .accent-button.active, 
+  .open .dropdown-toggle.accent-button { 
+    color: #ffffff; 
+    background-color: #F0335F; 
+    border-color: #F0335F; 
+  } 
+   
+  .accent-button:active, 
+  .accent-button.active, 
+  .open .dropdown-toggle.accent-button { 
+    background-image: none; 
+  } 
+   
+  .accent-button.disabled, 
+  .accent-button[disabled], 
+  fieldset[disabled] .accent-button, 
+  .accent-button.disabled:hover, 
+  .accent-button[disabled]:hover, 
+  fieldset[disabled] .accent-button:hover, 
+  .accent-button.disabled:focus, 
+  .accent-button[disabled]:focus, 
+  fieldset[disabled] .accent-button:focus, 
+  .accent-button.disabled:active, 
+  .accent-button[disabled]:active, 
+  fieldset[disabled] .accent-button:active, 
+  .accent-button.disabled.active, 
+  .accent-button[disabled].active, 
+  fieldset[disabled] .accent-button.active { 
+    background-color: #E75A7B; 
+    border-color: #E75A7B; 
+  } 
+   
+  .accent-button .badge { 
+    color: #E75A7B; 
+    background-color: #ffffff; 
+  }
